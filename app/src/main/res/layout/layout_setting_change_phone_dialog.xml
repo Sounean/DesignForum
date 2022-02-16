@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:id="@+id/old_auth_code_info"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_toStartOf="@id/get_old_auth_code"-->
+            <!--android:paddingTop="6dp"-->
+            <!--android:paddingBottom="6dp">-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/old_auth_code"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="@string/input_old_phone_auth_code"-->
+                <!--android:inputType="number" />-->
+
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/get_old_auth_code"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_marginTop="6dp"-->
+            <!--android:text="@string/get_auth_code" />-->
+    <!--</RelativeLayout>-->
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/new_phone_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp">
+
+        <EditText
+            android:id="@+id/new_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_new_phone"
+            android:inputType="phone"
+            tools:ignore="Autofill" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/new_auth_code_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/get_new_auth_code"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <EditText
+                android:id="@+id/new_auth_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_auth_code"
+                android:inputType="number" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/get_new_auth_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:text="@string/get_auth_code" />
+    </RelativeLayout>
+</LinearLayout>

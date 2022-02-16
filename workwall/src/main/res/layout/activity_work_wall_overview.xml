@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/srl_work_wall_overview_fresh_work_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 使用 NestedScrollView 使上面的ToolBar（搜索栏）能够下移 -->
+    <android.support.v4.widget.NestedScrollView
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 搜索栏部分 -->
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:padding="6dp">
+
+                <EditText
+                    android:id="@+id/et_work_wall_overview_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autofillHints="请输入作品信息"
+                    android:background="@drawable/shape_work_wall_overview_et_input"
+                    android:hint="请输入作品信息"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textSize="16sp" />
+            </android.support.v7.widget.Toolbar>
+
+
+            <!-- 作品预览界面，点击可查看作品详细内容 -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_work_wall_overview_preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:background="#E8E8E8">
+
+                <LinearLayout
+                    android:id="@+id/ll_work_wall_overview_click_load_more_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_work_wall_overview_show_load_word"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="加载更多"
+                        android:textColor="#8B8989"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>

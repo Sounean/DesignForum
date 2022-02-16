@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">micro_class</string>
+    <string name="search">Search</string>
+    <string name="course_category">课堂分类</string>
+    <string name="course_info">课程信息</string>
+    <string name="question">答疑</string>
+    <string name="course_study_or_video_list">课堂学习</string>
+    <string name="completed">已完成</string>
+    <string name="not_completed">未完成</string>
+    <string name="data_error">[Is Null]</string>
+    <string name="teacher_replies">教师回复: </string>
+    <string name="input_comment">输入评论吧</string>
+    <string name="loading">数据加载中...</string>
+    <string name="error">出现错误了, 请刷新试试吧</string>
+    <string name="textview">textview</string>
+
+    <integer name="img_tag">100</integer>
+</resources>

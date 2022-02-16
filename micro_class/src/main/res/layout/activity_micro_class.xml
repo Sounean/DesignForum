@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.chienli.micro_class.view_model.MicroClassActivityViewModel" />
+
+        <variable
+            name="microClassVM"
+            type="MicroClassActivityViewModel" />
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <cn.jzvd.JzvdStd
+                    android:id="@+id/video"
+                    android:layout_width="match_parent"
+                    android:layout_height="176dp"
+                    android:layout_alignParentTop="true"
+                    bind:videoBeanList="@{microClassVM.info.get().getVideo()}"
+                    bind:videoPosition="@{microClassVM.focusVideoPosition.get()}" />
+
+                <LinearLayout
+                    android:id="@+id/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/input"
+                    android:layout_below="@id/video"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <!-- 可折叠布局的父布局 -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:onClick="@{(v)->MicroClassActivityViewModel.changeExpandLayout(v)}">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:paddingBottom="4dp"
+                            android:text="@string/course_info"
+                            android:textSize="18sp" />
+
+                        <!--收藏-->
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_toStartOf="@+id/like"
+                            android:clickable="true"
+                            android:focusable="true"
+                            bind:initImageView="@{MicroClassActivityViewModel.LIKE}"
+                            android:onClick="@{(v) -> MicroClassActivityViewModel.onCollectClick(v)}"
+                            android:src="@drawable/ic_collect_micro_class" />
+
+                        <!--点赞-->
+                        <ImageView
+                            android:id="@+id/like"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_alignParentEnd="true"
+                            android:clickable="true"
+                            bind:initImageView="@{MicroClassActivityViewModel.COLLECT}"
+                            android:focusable="true"
+                            android:onClick="@{(v) -> MicroClassActivityViewModel.onLikeClick(v)}"
+                            android:src="@drawable/ic_like_micro_class" />
+                    </RelativeLayout>
+
+                    <com.seselin.view.ExpandLayout
+                        android:id="@+id/expand_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        bind:onExpandViewInflate="@{false}">
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="none"
+                                android:gravity="center|start"
+                                android:singleLine="false"
+                                android:text="@{microClassVM.info.get().getCourseText()}" />
+
+                        </android.support.v4.widget.NestedScrollView>
+                    </com.seselin.view.ExpandLayout>
+
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        app:tabMode="fixed">
+
+                        <android.support.design.widget.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/course_study_or_video_list" />
+
+                        <android.support.design.widget.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/question" />
+                    </android.support.design.widget.TabLayout>
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        bind:context="@{microClassVM.context}"
+                        bind:vpFragmentList="@{microClassVM.fragmentList}" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:background="@android:color/white"
+                    android:elevation="6dp"
+                    android:padding="8dp">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/selector_micro_class_bottom_tv_bg"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center|start"
+                        android:hint="@string/input_comment"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:padding="4dp"
+                        android:textSize="14sp"
+                        bind:setInputCommentListener="@{MicroClassActivityViewModel.INPUT_COMMENT_LISTENER}" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

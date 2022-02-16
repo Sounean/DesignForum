@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_all_toolbar_search" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll_main_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- NestedScrollView和RecyclerView同时使用 -->
+        <!-- RecyclerView数据刷新后,NestedScrollView会自动滑动到item0处,处理意见就是  -->
+        <!-- 为要展示到的根视图添加以下属性 -->
+        <!-- android:focusable="true" -->
+        <!-- android:focusableInTouchMode="true" -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner xmlns:banner="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/banner_main_home"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/banner_height"
+                banner:image_scale_type="center_crop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <!-- 此处的导航图标仍然需要进行修改, 这并不是完成品 - 改完了 -->
+                <!-- 点击事件应当做在对应的LinearLayout上, 点击的范围也比较大(这一条随时可以变) -->
+
+                <LinearLayout
+                    android:id="@+id/ll_main_home_batter_design"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_batter_design" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/batter_design" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_main_home_small_course"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_small_course" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/small_course" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_main_home_works_wall"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_work_wall" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/works_wall" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:background="@color/config_color_white"
+                android:id="@+id/recycler_main_home_news_group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:itemCount="20" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

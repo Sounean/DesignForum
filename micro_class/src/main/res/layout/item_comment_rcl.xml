@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="java.util.ArrayList" />
+
+        <import type="android.view.View" />
+
+        <import type="com.chienli.micro_class.data_model.CommentInfo" />
+
+        <import type="com.chienli.design_forum_all_lib.application.DesignForumApplication" />
+
+        <variable
+            name="data"
+            type="android.databinding.ObservableField&lt;CommentInfo&gt;" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_user_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                bind:setImgUrl='@{DesignForumApplication.HOST + "images/head/" + data.get().getList().get(position).getUserHead()}' />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/iv_user_icon"
+                android:orientation="vertical">
+                <!--用户名-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{data.get().getList().get(position).getUserName() == null ? @string/data_error : data.get().getList().get(position).getUserName()}'
+                    android:textColor="@color/config_color_75_pure_black"
+                    android:textSize="16sp" />
+                <!--时间-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.get().getList().get(position).getDiscussTime().substring(0,10)}"
+                    android:textColor="@color/config_color_50_pure_black" />
+                <!--具体的评论-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.get().getList().get(position).getDiscussText()}"
+                    android:textColor="@color/config_color_75_pure_black" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!--<fragment-->
+            <!--class="com.chienli.micro_class.ui.fragment.RepliesFragment"-->
+            <!--android:id="@+id/TODO"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:visibility="@{data.get().getList().get(position).getReplies() == 0 ? View.GONE : View.VISIBLE}"-->
+            <!--bind:setRepliesData="@{data.get().getList().get(position).getReplies()}" />-->
+        <!-- 这个FrameLayout是一个Fragment的结点，用于显示回复的数据 -->
+
+    </LinearLayout>
+</layout>

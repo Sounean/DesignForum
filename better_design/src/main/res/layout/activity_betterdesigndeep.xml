@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.BetterDesignDeepActivity"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/betterdesigntoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
+            app:popupTheme="@style/Base.ThemeOverlay.AppCompat.Light"
+            android:background="#f7f7f7"
+            />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_better_design_content_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- 查看更多 -->
+        <RelativeLayout
+            android:id="@+id/rl_work_wall_content_show_work_info"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+            <TextView
+                android:id="@+id/tv_work_wall_content_work_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="查看更多"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="normal"/>
+        </RelativeLayout>
+
+        <!-- 分割区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ededed" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="60个精致的日本平面设计作品集"/>
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+                <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_better_design_content_like_icon_no_selected"/>
+                <ImageView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_better_design_storage"/>
+                <ImageView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_better_design_share"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- 分割线 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ededed" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <!-- 底部的评论数量 -->
+            <TextView
+                android:id="@+id/tv_better_design_content_comment_num_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="0 条评论"
+                android:textColor="#68625f" />
+        </RelativeLayout>
+
+        <!-- 分割线 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ededed" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_better_design_content_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- 分割区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#ededed" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_work_wall_content_type_word"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_work_wall_content_send_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发送"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    
+</android.support.v4.widget.NestedScrollView>

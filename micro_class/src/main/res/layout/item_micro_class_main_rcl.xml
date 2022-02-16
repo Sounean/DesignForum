@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.chienli.micro_class.data_model.MicroClassBaseInfo" />
+
+        <import type="com.chienli.micro_class.view_model.ItemMicroClassMainRclViewModel" />
+
+        <import type="com.chienli.design_forum_all_lib.application.DesignForumApplication" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="data"
+            type="android.databinding.ObservableArrayList&lt;MicroClassBaseInfo&gt;" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:onClick="@{(v)-> ItemMicroClassMainRclViewModel.onItemClick(v, data, position)}">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:clickable="false"
+                android:focusable="false"
+                bind:setImgUrl='@{DesignForumApplication.HOST + "images/Course/" + data.get(position).getPath() + "/" + data.get(position).getImage()}' />
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_work_wall_content_work_first_pic"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 【1】发布者和作品信息布局 -->
+            <!-- （联网内容）发布者头像，发布者姓名，发布时间，喜欢人数，评论数 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent">
+                            <!-- 发布者头像 -->
+                            <ImageView
+                                android:id="@+id/iv_work_wall_content_work_publisher_icon"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="20dp"
+                            android:paddingBottom="20dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true">
+                                <!-- 发布者姓名 -->
+                                <TextView
+                                    android:id="@+id/tv_work_wall_content_work_publisher_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="学习委员"
+                                    android:textColor="#000"
+                                    android:textSize="24sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="horizontal">
+
+                                <!-- 发布者家乡 -->
+                                <TextView
+                                    android:id="@+id/tv_work_wall_content_type"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="象山"
+                                    android:textColor="#C1C1C1"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="76dp"
+                        android:layout_height="match_parent">
+                        <!-- 关注 -->
+                        <Button
+                            android:id="@+id/btn_work_wall_content_click_concern"
+                            android:layout_width="76dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/shape_work_wall_content_btn_concern_icon"
+                            android:fontFamily="sans-serif"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:text="关注"
+                            android:textColor="#fff"
+                            android:textSize="17sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- 【2】作品名布局 -->
+                    <!-- （联网内容）获取作品名，显示在TextView上 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_work_wall_content_work_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="山海经创意插画集"
+                            android:textColor="#000"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+                    <!-- 作品说明与点赞等区域之间的空隙 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+
+                        <!-- 点赞 -->
+                        <LinearLayout
+                            android:id="@+id/ll_work_wall_content_click_like_area"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <!-- 点赞图标需要变化 -->
+                            <ImageView
+                                android:id="@+id/iv_work_wall_content_like_icon"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:src="@drawable/ic_work_wall_content_like_icon_no_selected" />
+                            <!-- 点赞数 -->
+                            <TextView
+                                android:id="@+id/tv_work_wall_content_like_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2312"
+                                android:textColor="#ed505d"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <!-- 收藏 -->
+                        <LinearLayout
+                            android:id="@+id/ll_work_wall_content_click_collection_area"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_work_wall_content_collection_icon"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:background="@drawable/ic_work_wall_content_collection_icon_no_selected" />
+
+                            <!-- 显示收藏数 -->
+                            <TextView
+                                android:id="@+id/tv_work_wall_content_collect_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10"
+                                android:textColor="#ed505d"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+
+                        <!-- 评论 -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:src="@drawable/ic_work_wall_content_iv_comment_icon" />
+                            <!-- 上边的评论数 -->
+                            <TextView
+                                android:id="@+id/tv_work_wall_content_comment_num_top"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="56"
+                                android:textColor="#ed505d"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- 分隔线，美观作用 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="6dp"
+            android:background="#ededed" />
+
+        <android.support.v7.widget.RecyclerView
+            android:nestedScrollingEnabled="false"
+            android:id="@+id/rv_work_wall_content_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="#ededed" />
+
+        <!-- 作品信息介绍 -->
+        <!-- 点击这一栏即可展示作品信息 -->
+        <RelativeLayout
+            android:id="@+id/rl_work_wall_content_show_work_info"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:id="@+id/tv_work_wall_content_work_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="作品信息"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- 作品信息下拉箭头图示 -->
+            <ImageView
+                android:id="@+id/iv_work_wall_content_change_arrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_work_wall_content_info_down" />
+        </RelativeLayout>
+
+        <!-- 可隐藏和展现的作品信息内容 -->
+        <LinearLayout
+            android:id="@+id/ll_work_wall_content_work_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/tv_work_wall_content_work_type_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="原创-插画" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="创作时间" />
+
+                <TextView
+                    android:id="@+id/tv_work_wall_content_upload_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="2017-10" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="版权信息" />
+
+                <TextView
+                    android:id="@+id/tv_work_wall_content_copyright_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="本作品最终版权解释归学习委员所有，本作品禁止匿名转载，禁止商业使用" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 分割线 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ededed" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <!-- 底部的评论数量 -->
+            <TextView
+                android:id="@+id/tv_work_wall_content_comment_num_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="56 条评论"
+                android:textColor="#68625f" />
+        </RelativeLayout>
+
+        <!-- 分割线 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ededed" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_work_wall_content_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
+        <!-- 点击加载更多 -->
+        <LinearLayout
+            android:id="@+id/ll_work_wall_content_comment_click_load_more_area"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center">
+
+            <!-- 显示加载时的文字 -->
+            <TextView
+                android:id="@+id/tv_work_wall_content_show_load_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载更多"
+                android:textColor="#8B8989"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- 分割区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#ededed" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <EditText
+                android:id="@+id/et_work_wall_content_type_word"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="发表你的精彩评论（限50字）" />
+
+            <Button
+                android:id="@+id/btn_work_wall_content_send_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发送"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

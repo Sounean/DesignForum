@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 下拉后的滚动条颜色 -->
+    <color name="colorSalmon">#FA8072</color>
+</resources>

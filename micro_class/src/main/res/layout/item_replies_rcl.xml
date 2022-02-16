@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.chienli.micro_class.data_model.CommentInfo.CommentBean.RepliesBean" />
+
+        <variable
+            name="data"
+            type="android.databinding.ObservableArrayList&lt;RepliesBean&gt;" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_user_icon"-->
+            <!--android:layout_width="48dp"-->
+            <!--android:layout_height="48dp"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--bind:setImgUrl='@{DesignForumApplication.HOST + "images/head/" + data.get().getList().get(position).getUserHead()}' />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@id/iv_user_icon"
+            android:orientation="vertical">
+            <!--用户名-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text='@{data.get(position).getReceiveName()==null?@string/teacher_replies + @string/data_error:@string/teacher_replies + data.get(position).getReceiveName()}'
+                android:textColor="@color/config_color_75_pure_black"
+                android:textSize="16sp" />
+            <!--时间-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@{data.get(position).getReplyTime().substring(0,10)}"
+                android:textColor="@color/config_color_50_pure_black" />
+            <!--具体的评论-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="@{data.get(position).getReplyText()}"
+                android:textColor="@color/config_color_75_pure_black" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

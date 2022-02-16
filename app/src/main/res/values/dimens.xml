@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 用于存放屏幕控件的大小数值 -->
+    <dimen name="toolbar_height">48dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
+
+    <dimen name="banner_height">176dp</dimen>
+    <dimen name="navigation_group_height">60dp</dimen>
+    <dimen name="main_personal_center_user_name_size">20sp</dimen>
+    <dimen name="main_personal_center_user_icon_width">128dp</dimen>
+    <dimen name="main_personal_center_user_icon_height">128dp</dimen>
+    <dimen name="main_personal_center_top_layout_height">196dp</dimen>
+    <dimen name="main_personal_center_middle_text_size">16sp</dimen>
+    <dimen name="main_personal_center_middle_height">48dp</dimen>
+
+
+
+</resources>

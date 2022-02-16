@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:design:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation project(':design_forum_all_lib')
+    implementation project(':expand_layout')
+
+        implementation "io.reactivex.rxjava2:rxjava:2.2.8"
+        implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+        implementation 'com.uber.autodispose:autodispose-lifecycle-jdk8:1.2.0'
+        implementation 'com.uber.autodispose:autodispose-android-archcomponents:1.0.0-RC2'
+
+        // 这个是下拉刷新, 上划加载的框架, Header和Footer是一些动画特效
+        implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-18'
+        implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-18'
+        // 轮播图框架
+        implementation 'com.youth.banner:banner:1.4.10'
+        // Glide
+    //    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    //    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+        // OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:3.13.1'
+    // 这个是阿里的fastJSON, 性能OK, Apache 2.0 license
+    implementation 'com.alibaba:fastjson:1.2.51'
+    // LitePal
+    implementation 'org.litepal.android:java:3.0.0'
+    // 饺子播放器, 7.0还没开发完, 先使用6.4.3
+    implementation 'cn.jzvd:jiaozivideoplayer:6.4.3'
+
+    implementation 'android.arch.lifecycle:viewmodel:1.1.1'
+    implementation 'android.arch.lifecycle:livedata-core:1.1.1'
+    implementation 'android.arch.lifecycle:common-java8:1.1.1'
+    annotationProcessor 'android.arch.lifecycle:compiler:1.1.1'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+
+    implementation 'com.jakewharton:butterknife:9.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
+
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.chienli.micro_class.data_model.MicroClassInfo" />
+
+        <import type="com.chienli.micro_class.view_model.ItemVideoListRclViewModel" />
+
+        <import type="com.chienli.micro_class.ui.activity.MicroClassActivity" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="android.databinding.ObservableField&lt;MicroClassInfo&gt;" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="activityVM"
+            type="com.chienli.micro_class.view_model.MicroClassActivityViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{(v)->ItemVideoListRclViewModel.onItemClick(v,position,activityVM)}"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:clickable="false"
+            android:focusable="false"
+            android:text="@{data.get().getVideo().get(position).getVideoText()}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="4dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:text='@{data.get().getStudy_video().contains(data.get().getVideo().get(position).getId()) ? @string/completed : @string/not_completed}'
+            android:textColor="@{data.get().getStudy_video().contains(data.get().getVideo().get(position).getId()) ? @color/config_color_25_pure_black : @color/config_color_red}"
+            android:textSize="12sp" />
+
+        <!-- 比对学习过的视频中是否有 -->
+
+    </RelativeLayout>
+
+</layout>

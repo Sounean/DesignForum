@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/toolbar_all"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                android:padding="10dp"
+                toolbar:contentInsetEnd="0dp"
+                toolbar:contentInsetStart="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_toolbar_all_back"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/selector_all_toolbar_back_arrow"
+                        android:backgroundTint="@color/config_color_50_pure_black"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/iv_toolbar_all_back"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_back_arrow"
+                            android:backgroundTint="@color/config_color_50_pure_black"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:scaleType="fitCenter" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_toolbar_all_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_toStartOf="@id/ll_toolbar_all_add"
+                        android:ellipsize="end"
+                        android:gravity="center|start"
+                        android:lines="1"
+                        android:text="上传作品"
+                        android:textColor="@color/config_color_black"
+                        android:textSize="20sp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_toolbar_all_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/selector_all_toolbar_back_arrow"
+                        android:backgroundTint="@color/config_color_50_pure_black"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/iv_toolbar_all_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="@string/add_img" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_above="@id/btn_main_upload"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.sendtion.xrichtext.RichTextEditor
+                    android:visibility="gone"
+                    android:id="@+id/et_title_main_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    app:rt_editor_image_bottom="10"
+                    app:rt_editor_image_height="500"
+                    app:rt_editor_text_init_hint="在这里输入标题"
+                    app:rt_editor_text_line_space="6dp"
+                    app:rt_editor_text_size="16sp" />
+
+
+                <com.sendtion.xrichtext.RichTextEditor
+                    android:id="@+id/et_main_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/et_title_main_upload"
+                    android:layout_alignParentBottom="true"
+                    app:rt_editor_image_bottom="10"
+                    app:rt_editor_image_height="500"
+                    app:rt_editor_text_init_hint="在这里输入内容"
+                    app:rt_editor_text_line_space="6dp"
+                    app:rt_editor_text_size="16sp" />
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/btn_main_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="24dp"
+            android:text="@string/upload" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/config_color_white"
+    tools:context=".activity.MainActivity">
+
+    <com.inet.designforum.view.NoScrollViewPager
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tab_main" />
+
+    <!--<com.qmuiteam.qmui.widget.QMUITabSegment xmlns:tab="http://schemas.android.com/apk/res-auto"-->
+    <!--android:id="@+id/tab_main"-->
+    <!--style="@style/QMUITheme"-->
+    <!--tab:qmui_tab_icon_position="top"-->
+    <!--tab:qmui_tab_has_indicator="false"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/tab_segment_height"-->
+    <!--android:layout_alignParentBottom="true" />-->
+
+    <!-- 值得注意的是, 在这里的TabLayout并没有隐藏Indicator, 仅仅是将Indicator的颜色设置成透明这个颜色 -->
+
+    <com.inet.designforum.view.MainHomeTabLayout xmlns:tab="http://schemas.android.com/apk/res-auto"
+        tab:tabIndicatorColor="@android:color/transparent"
+        android:id="@+id/tab_main"
+        android:layout_width="match_parent"
+        android:background="@color/config_color_white"
+        android:layout_height="@dimen/tab_height"
+        android:elevation="6dp"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" android:constantSize="true">
+
+    <!-- 手指按压中的状态 -->
+    <item android:state_pressed="true">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="4dp" />
+                    <solid android:color="#40000000" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ic_search" android:gravity="start|center" android:left="4dp"/>
+        </layer-list>
+    </item>
+
+    <!-- 默认的背景 -->
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="4dp" />
+                    <solid android:color="#26000000" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ic_search" android:gravity="start|center" android:left="4dp"/>
+        </layer-list>
+    </item>
+
+
+</selector>

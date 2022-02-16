@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#BDBDBD</color>
+    <color name="colorAccent">#03A9F4</color>
+
+
+    <color name="config_color_10_pure_black">#19000000</color>
+    <color name="config_color_10_white">#19FFFFFF</color>
+    <color name="config_color_15_pure_black">#26000000</color>
+    <color name="config_color_15_white">#26FFFFFF</color>
+    <color name="config_color_25_pure_black">#40000000</color>
+    <color name="config_color_25_white">#40FFFFFF</color>
+    <color name="config_color_50_blue">#801B88EE</color>
+    <color name="config_color_50_pure_black">#80000000</color>
+    <color name="config_color_50_white">#80FFFFFF</color>
+    <color name="config_color_60_pure_black">#99000000</color>
+    <color name="config_color_75_pure_black">#C0000000</color>
+    <color name="config_color_75_white">#C0FFFFFF</color>
+    <color name="config_color_black">#212832</color>
+    <color name="config_color_blue">#1B88EE</color>
+    <color name="config_color_link">#547FB0</color>
+    <color name="config_color_pressed">#EEEEF0</color>
+    <color name="config_color_pure_black">#000000</color>
+    <color name="config_color_red">#FA3A3A</color>
+    <color name="config_color_transparent">#00000000</color>
+    <color name="config_color_white">#ffffff</color>
+    
+    <color name="config_color_FFCC33">#FFCC33</color>
+    
+    <color name="work_wall">#88FA3A3A</color>
+    <color name="batter_design">#8811bb11</color>
+    <color name="small_course">#881B88EE</color>
+    
+</resources>

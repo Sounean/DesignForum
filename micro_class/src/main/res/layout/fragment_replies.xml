@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="repliesData"
+            type="com.chienli.micro_class.view_model.RepliesFragmentViewModel"/>
+    </data>
+    <android.support.v7.widget.RecyclerView
+        bind:repliesRclData="@{repliesData.repliesBeans}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</layout>

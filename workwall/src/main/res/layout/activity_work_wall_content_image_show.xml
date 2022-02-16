@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#363636"
+    android:id="@+id/rl_work_wall_content_image_show">
+    <!-- #8B8386 #363636 -->
+
+    <ImageView
+        android:id="@+id/iv_work_wall_content_image_show_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/tv_work_wall_content_image_show_watch_better_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/shape_work_wall_content_btn_watch_better_img"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="8dp"
+        android:text="查看原图"
+        android:textColor="#E8E8E8"
+        android:textSize="14sp" />
+</RelativeLayout>

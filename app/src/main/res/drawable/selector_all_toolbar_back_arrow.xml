@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+            <item>
+                <ripple android:color="@color/config_color_10_pure_black" android:radius="14dp" />
+            </item>
+            <!--<item android:drawable="@drawable/ic_back_arrow"/>-->
+        </layer-list>
+    </item>
+</selector>

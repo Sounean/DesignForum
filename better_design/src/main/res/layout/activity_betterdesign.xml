@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BetterDesignActivity"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <!--<include layout="@layout/layout_all_toolbar_search" />-->
+
+
+    <android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:elevation="0dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:background="#ffffff"
+                xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                toolbar:contentInsetEnd="0dp"
+                toolbar:contentInsetStart="0dp"
+                >
+
+                <!-- contentInset代表着内边距的属性 -->
+
+                <!--<TextView
+                    android:id="@+id/tv_all_toolbar_search"
+                    android:text="搜索你喜欢的"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:background="@drawable/seletor_all_toolbar_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="true" />-->
+                <EditText
+                    android:id="@+id/tv_all_toolbar_search"
+                    android:hint="搜索你喜欢的"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:background="@drawable/seletor_all_toolbar_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="true" />
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <android.support.design.widget.TabLayout
+        app:tabTextAppearance="@style/BetterDesignTabLayoutTextStyle"
+        app:tabIndicatorHeight="0dp"
+        app:tabPaddingStart="30dp"
+        app:tabPaddingBottom="10dp"
+        app:tabPaddingEnd="30dp"
+        app:tabPaddingTop="10dp"
+        app:tabMode="scrollable"
+        app:tabTextColor="#494647"
+        app:tabSelectedTextColor="#ef7002"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/tb_topbetterdesign">
+    </android.support.design.widget.TabLayout>
+
+    <!--<android.support.v4.view.ViewPager
+        android:id="@+id/vp_mainbetterdesign"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tab_main" />-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyc_betterdesign"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+            </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+    </ScrollView>
+
+    <android.support.design.widget.TabLayout xmlns:tab="http://schemas.android.com/apk/res-auto"
+        tab:tabIndicatorColor="@android:color/transparent"
+        android:id="@+id/tab_main"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:elevation="6dp"
+        android:layout_alignParentBottom="true" />
+</LinearLayout>
